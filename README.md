@@ -10,3 +10,5 @@ nos permite manejar la información desde un componente padre y tener control to
 In other words, when multiple components work together to have a shared state and handle logic together, they are called compound components.
 
 Think of compound components like the <select> and <option> elements in HTML. Apart they don’t do too much, but together they allow you to create the complete experience.  — Kent C. Dodds
+
+https://platzi.com/blog/lleva-tu-react-al-siguiente-nivel-con-compound-pattern/
