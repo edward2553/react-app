@@ -3,7 +3,6 @@ import { ProductCart as ProductCartHOC, ProductImage } from "./ProductCart";
 import { ProductTitle } from "./ProductTitle";
 
 export * from "./ProductButtons";
-// export * from "./ProductCart";
 export * from "./ProductImage";
 export * from "./ProductTitle";
 
