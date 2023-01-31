@@ -1,15 +1,63 @@
+import { useState } from "react";
 import ProductCart, {
   ProductButtons,
   ProductImage,
   ProductTitle,
 } from "../components";
-import { products } from "../data/products";
-import { useShoppingCart } from "../hooks/ueShoppingCart";
+import { Product, onChangeArgs } from "../interfaces";
 import '../styles/custom-styles.css';
+import { products } from "../data/products";
+
+interface ProductInCart extends Product {
+  count: number;
+}
+
+type shoppingCartState = { [key:string] : ProductInCart }
 
 export const ShoppingPage = () => {
 
-  const { onProductCountChange, shoppingCart } = useShoppingCart();
+  const [shoppingCart, setShoppingCart] = useState<shoppingCartState>({});
+
+  const onProductCountChange = ({count, product}: onChangeArgs) => {
+    console.log({count})
+    setShoppingCart(oldShoppingCart => {
+
+      const productInCart: ProductInCart = oldShoppingCart[product.id] || { ...product, count: 0 };
+
+      if(Math.max(productInCart.count + count, 0)) {
+        productInCart.count += count;
+        return {
+          ...oldShoppingCart,
+          [product.id]: productInCart,
+        }
+      }
+
+      // Borrar el producto
+
+      const {[product.id]: toDelete, ...rest} = oldShoppingCart;
+      return rest;
+
+      // if (!count) {
+
+      //   const {[product.id]: toDelete, ...rest } = oldShoppingCart;
+      //   return rest
+
+      //   // const newShopingCart = Object.values(shoppingCart).filter(p => p.id !== product.id)
+      //   // const newShopingCartObj : shoppingCartState = {};
+      //   // newShopingCart.forEach((p, idx) => {
+      //   //   newShopingCartObj[idx] = p;
+      //   // });
+      //   // return newShopingCartObj;
+        
+      // }
+
+      // return {
+      //   ...oldShoppingCart,
+      //   [product.id]: {...product, count}
+      // };
+    })
+    
+  };
 
   return (
     <div>
