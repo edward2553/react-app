@@ -1,12 +1,5 @@
 import { useState } from "react";
-import ProductCart, {
-  ProductButtons,
-  ProductImage,
-  ProductTitle,
-} from "../components";
 import { Product, onChangeArgs } from "../interfaces";
-import '../styles/custom-styles.css';
-import { products } from "../data/products";
 
 interface ProductInCart extends Product {
   count: number;
@@ -63,7 +56,7 @@ export const ShoppingPage = () => {
     <div>
       <h1>Shopping Store</h1>
       <hr />
-      <div
+      {/* <div
         style={{
           display: "flex",
           flexDirection: "row",
@@ -105,7 +98,7 @@ export const ShoppingPage = () => {
             />
           </ProductCart>
         ))}
-      </div>
+      </div> */}
       <div style={{marginTop: 30}}>
         <code>
           {JSON.stringify(shoppingCart, null, 5)}
