@@ -1,0 +1,70 @@
+[
+  {
+    "type": "input",
+    "name": "firstName",
+    "placeholder": "Edward Andres",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "minLength",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": "Moron Quintana",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "edwaramor9@gmail.com",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "favoriteAnime",
+    "label": "Favorite Anime",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ],
+    "options": [
+      {
+        "id": 1,
+        "label": "One Piece"
+      },
+      {
+        "id": 2,
+        "label": "Naruto"
+      },
+      {
+        "id": 3,
+        "label": "Dragon Ball Z"
+      }
+    ]
+  }
+]
